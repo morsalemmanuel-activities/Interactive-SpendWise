@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise - Interactive Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SpendWise</h1>
+        <p>Build Your Financial Foundation</p>
+    </header>
+
+    <main class="container">
+        <!-- Budget Setup Section -->
+        <section class="card">
+            <h2>1. Set Monthly Budget</h2>
+            <div class="input-group">
+                <input type="number" id="budget-input" placeholder="Enter total budget (e.g. 50000)" min="0">
+                <button id="set-budget-btn">Set Budget</button>
+            </div>
+        </section>
+
+        <!-- Dashboard Financial Overview Metrics -->
+        <section class="dashboard-grid">
+            <div class="metric-box">
+                <h3>Total Budget</h3>
+                <p id="display-budget">KES 0.00</p>
+            </div>
+            <div class="metric-box">
+                <h3>Total Expenses</h3>
+                <p id="display-expenses">KES 0.00</p>
+            </div>
+            <div class="metric-box">
+                <h3>Remaining Balance</h3>
+                <p id="display-balance">KES 0.00</p>
+            </div>
+        </section>
+
+        <!-- System Response Feedback Status Container -->
+        <div id="budget-alert" class="alert hidden"></div>
+
+        <!-- Dynamic Expense Tracking Entry Form -->
+        <section class="card">
+            <h2>2. Add Expense Record</h2>
+            <form id="expense-form">
+                <div class="form-row">
+                    <input type="text" id="expense-name" placeholder="Expense description (e.g. Transport)" required>
+                    <input type="number" id="expense-amount" placeholder="Amount (KES)" min="1" required>
+                    <button type="submit">Add Expense</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Stored Expense Data History Ledger logs -->
+        <section class="card">
+            <h2>3. Expense History Logs</h2>
+            <ul id="expense-list" class="expense-log-container">
+                <!-- Data items injected dynamically via loops -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SpendWise Application</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
